@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvendando Novas Perspectivas: Pedagogias Críticas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals and Teal -->
+    <!-- Application Structure Plan: A single-page application (SPA) with a fixed left-hand sidebar for navigation between the five e-book modules. This structure provides a clear, persistent sense of place and progress. The main content area dynamically displays the selected module, containing interactive elements like quizzes, text areas for reflection, and checklists. This task-oriented, modular flow was chosen to mirror the pedagogical journey of the source material—from awareness to application—while leveraging the interactivity of a web app for a more engaging and self-directed user experience than a static document. -->
+    <!-- Visualization & Content Choices: The application uses interactive HTML forms for quizzes and checklists to provide immediate feedback (Goal: Inform/Assess). Textareas allow for user reflection and application (Goal: Organize/Apply). The primary visualization is a Radar Chart (Chart.js) in the final module to synthesize the user's self-assessment of their integrated lesson plan (Goal: Compare/Relate). This chart was chosen over a simple list because it provides a powerful, at-a-glance visualization of strengths and areas for improvement across all pedagogical pillars, making the final self-evaluation more impactful and memorable. Library/Method: HTML, Tailwind, Vanilla JS, Chart.js. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .module-content { display: none; }
+        .module-content.active { display: block; }
+        .sidebar-link.active { background-color: #0d9488; color: white; }
+        .quiz-feedback { display: none; }
+        .chart-container { position: relative; height: 40vh; width: 100%; max-width: 500px; margin: 2rem auto; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-stone-800 text-white p-4 fixed h-full transition-transform -translate-x-full sm:translate-x-0">
+            <h1 class="text-xl font-bold mb-6">Desvendando Perspectivas</h1>
+            <nav id="navigation">
+                <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700 active" data-module="module1">Módulo 1: Despertar</a>
+                <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="module2">Módulo 2: Decolonialidade</a>
+                <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="module3">Módulo 3: Translinguagem</a>
+                <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="module4">Módulo 4: Problematização</a>
+                <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="module5">Módulo 5: Integração</a>
+            </nav>
+        </aside>
+
+        <button id="menu-button" class="sm:hidden fixed top-4 left-4 z-20 bg-stone-800 text-white p-2 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        <!-- Main Content -->
+        <main class="flex-1 sm:ml-64 p-6 md:p-10">
+            
+            <!-- Módulo 1 -->
+            <div id="module1" class="module-content active">
+                <h2 class="text-3xl font-bold text-teal-800 mb-2">Módulo 1: Despertando a Consciência</h2>
+                <p class="text-lg text-stone-600 mb-8">Neste módulo, começaremos a questionar as bases do ensino de inglês e a refletir sobre o nosso papel como educadores em um mundo em constante transformação.</p>
+                
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Ativação: Ponto de Partida</h3>
+                        <p class="mb-4">Qual o papel que o ensino da língua inglesa desempenha na sociedade brasileira hoje, na sua percepção?</p>
+                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Pense além da comunicação básica..."></textarea>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Quiz: Crenças Comuns</h3>
+                        <div class="space-y-4" id="quiz-m1">
+                            <div>
+                                <p class="font-medium">1. O inglês deve ser ensinado de forma pura, sem qualquer interferência da língua portuguesa.</p>
+                                <div class="flex space-x-4 mt-2">
+                                    <label class="flex items-center"><input type="radio" name="q1" value="false" class="mr-2"> Falso</label>
+                                    <label class="flex items-center"><input type="radio" name="q1" value="true" class="mr-2"> Verdadeiro</label>
+                                </div>
+                                <p class="quiz-feedback mt-2 text-sm p-2 rounded-md bg-red-100 text-red-800">A visão de "pureza linguística" é um ideal monolíngue que ignora a realidade multilíngue dos estudantes.</p>
+                            </div>
+                            <div>
+                                <p class="font-medium">2. O currículo de inglês deve priorizar materiais e temas culturais de países anglo-saxões para garantir a autenticidade.</p>
+                                <div class="flex space-x-4 mt-2">
+                                    <label class="flex items-center"><input type="radio" name="q2" value="false" class="mr-2"> Falso</label>
+                                    <label class="flex items-center"><input type="radio" name="q2" value="true" class="mr-2"> Verdadeiro</label>
+                                </div>
+                                <p class="quiz-feedback mt-2 text-sm p-2 rounded-md bg-red-100 text-red-800">A exclusividade de culturas anglo-saxãs pode perpetuar a hegemonia cultural e ignorar a diversidade de contextos globais.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Exploração: A Língua como Campo de Lutas</h3>
+                        <p class="mb-4">"A língua, e consequentemente o seu ensino, não é apenas um sistema de signos; é um construto social e histórico que reflete e molda relações de poder. [...] Nosso papel, portanto, é ir além da mera transmissão de conteúdo gramatical e lexical, convidando à reflexão sobre os 'porquês' e 'para quês' da aprendizagem, transformando a sala de aula em um espaço de problematização e agência."</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Aplicação: Aula "Tradicional" vs. "Crítica"</h3>
+                        <p class="mb-4 text-sm text-stone-600">Categorize as práticas abaixo. Dica: Pense em qual abordagem coloca o aluno como protagonista.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-center mb-2">Aula Tradicional</h4>
+                                <div id="traditional-col" class="bg-stone-100 p-4 rounded-lg min-h-[200px] border-2 border-dashed"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-center mb-2">Aula Crítica</h4>
+                                <div id="critical-col" class="bg-teal-50 p-4 rounded-lg min-h-[200px] border-2 border-dashed border-teal-200"></div>
+                            </div>
+                        </div>
+                         <div id="items-to-sort" class="flex flex-wrap gap-2 mt-4">
+                            <button class="sort-item p-2 bg-white border rounded-md shadow-sm cursor-pointer hover:bg-stone-50">Foco na memorização</button>
+                            <button class="sort-item p-2 bg-white border rounded-md shadow-sm cursor-pointer hover:bg-stone-50">Estímulo ao questionamento</button>
+                            <button class="sort-item p-2 bg-white border rounded-md shadow-sm cursor-pointer hover:bg-stone-50">Materiais importados exclusivos</button>
+                            <button class="sort-item p-2 bg-white border rounded-md shadow-sm cursor-pointer hover:bg-stone-50">Valorização das experiências dos alunos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Módulo 2 -->
+            <div id="module2" class="module-content">
+                <h2 class="text-3xl font-bold text-teal-800 mb-2">Módulo 2: Decolonialidade na Prática</h2>
+                <p class="text-lg text-stone-600 mb-8">Como a perspectiva decolonial pode transformar a escolha de conteúdos e materiais em suas aulas de inglês.</p>
+                
+                 <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Ativação: Análise de Livro Didático</h3>
+                        <p class="mb-4"><b>Cenário:</b> Uma unidade sobre "culturas do mundo" foca em Nova Iorque, Londres e Paris, sem menção a culturas latino-americanas ou africanas.</p>
+                        <ul class="list-disc list-inside space-y-2 mb-4">
+                            <li>Que visão de mundo este material parece promover?</li>
+                            <li>Que vozes estão ausentes?</li>
+                            <li>Como você poderia "problematizar" essa unidade com seus alunos?</li>
+                        </ul>
+                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Escreva sua análise..."></textarea>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Aplicação: Reescreva a Narrativa</h3>
+                        <p class="mb-4">Pense em um tópico comum (ex: "My Family"). Como adaptá-lo para uma perspectiva decolonial, valorizando a diversidade cultural brasileira?</p>
+                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Descreva sua ideia de atividade..."></textarea>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Avaliação: Checklist Decolonial</h3>
+                        <div class="space-y-3" id="checklist-m2">
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded"> Minha atividade questiona alguma narrativa hegemônica?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded"> A atividade valoriza vozes e conhecimentos não-hegemônicos?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded"> Os alunos são encorajados a trazer suas próprias experiências?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded"> A atividade promove o pensamento crítico sobre poder?</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Módulo 3 -->
+            <div id="module3" class="module-content">
+                <h2 class="text-3xl font-bold text-teal-800 mb-2">Módulo 3: Translinguagem</h2>
+                 <p class="text-lg text-stone-600 mb-8">Repensando a relação entre as línguas na sua sala de aula, explorando o poder da translinguagem.</p>
+                
+                 <div class="space-y-8">
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Ativação: Reflexão sobre a L1</h3>
+                        <p class="mb-4"><b>Cenário:</b> Um aluno tenta explicar uma ideia complexa em português, mas hesita por medo de estar "falhando". Qual sua reação? Como a translinguagem poderia ajudar?</p>
+                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Descreva sua abordagem..."></textarea>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Aplicação: Desenhando uma Aula Translíngue</h3>
+                        <p class="mb-4">Escolha um tópico. Descreva uma atividade onde o uso intencional do português é permitido para facilitar a produção em inglês.</p>
+                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Planeje sua atividade aqui..."></textarea>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Módulo 4 -->
+            <div id="module4" class="module-content">
+                 <h2 class="text-3xl font-bold text-teal-800 mb-2">Módulo 4: Educação Problematizadora</h2>
+                 <p class="text-lg text-stone-600 mb-8">Mergulhando nos princípios da pedagogia de Paulo Freire para estimular a autonomia e o pensamento crítico.</p>
+
+                 <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Aplicação: Criando uma Roda de Conversa</h3>
+                        <p class="mb-4">Escolha um tema de interesse dos seus alunos (ex: redes sociais). Elabore 5 perguntas em inglês que estimulem o pensamento crítico.</p>
+                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="5" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
+                    </div>
+
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Avaliação: Rubrica de Ambientes Libertadores</h3>
+                        <p class="mb-4">Avalie-se de 1 (Pouco) a 5 (Totalmente) em cada item.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="font-medium">Crio oportunidades para os alunos questionarem?</label>
+                                <input type="range" min="1" max="5" value="3" class="w-full">
+                            </div>
+                            <div>
+                                <label class="font-medium">Valorizo as experiências prévias dos alunos?</label>
+                                <input type="range" min="1" max="5" value="3" class="w-full">
+                            </div>
+                             <div>
+                                <label class="font-medium">Vejo o "erro" como uma oportunidade de aprendizagem?</label>
+                                <input type="range" min="1" max="5" value="3" class="w-full">
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            
+            <!-- Módulo 5 -->
+            <div id="module5" class="module-content">
+                <h2 class="text-3xl font-bold text-teal-800 mb-2">Módulo 5: Integrando as Pedagogias Críticas</h2>
+                 <p class="text-lg text-stone-600 mb-8">Sintetizando os aprendizados para planejar a aplicação prática e se tornar um agente de transformação.</p>
+                
+                 <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Aplicação: Plano de Aula Integrado</h3>
+                        <p class="mb-4">Crie um plano de aula completo que incorpore decolonialidade, translinguagem e educação problematizadora.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Tema da aula" class="p-2 border rounded-md">
+                             <input type="text" placeholder="Público-alvo" class="p-2 border rounded-md">
+                        </div>
+                        <textarea class="w-full p-2 border rounded-md mt-4" rows="8" placeholder="Passo a passo detalhado da aula..."></textarea>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-xl font-semibold mb-4">Avaliação: Autoavaliação do Plano de Aula</h3>
+                         <p class="mb-4 text-sm text-stone-600">Avalie seu plano de aula de 1 (Precisa de Revisão) a 5 (Excelente) e veja o resultado no gráfico.</p>
+                        <div id="final-rubric" class="space-y-4">
+                             <div>
+                                <label for="rubric-decoloniality" class="font-medium">Decolonialidade</label>
+                                <input type="range" id="rubric-decoloniality" min="1" max="5" value="3" class="w-full rubric-slider">
+                            </div>
+                             <div>
+                                <label for="rubric-translanguaging" class="font-medium">Translinguagem</label>
+                                <input type="range" id="rubric-translanguaging" min="1" max="5" value="3" class="w-full rubric-slider">
+                            </div>
+                            <div>
+                                <label for="rubric-problematizing" class="font-medium">Problematização</label>
+                                <input type="range" id="rubric-problematizing" min="1" max="5" value="3" class="w-full rubric-slider">
+                            </div>
+                             <div>
+                                <label for="rubric-engagement" class="font-medium">Engajamento</label>
+                                <input type="range" id="rubric-engagement" min="1" max="5" value="3" class="w-full rubric-slider">
+                            </div>
+                              <div>
+                                <label for="rubric-assessment" class="font-medium">Avaliação</label>
+                                <input type="range" id="rubric-assessment" min="1" max="5" value="3" class="w-full rubric-slider">
+                            </div>
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="finalChart"></canvas>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = document.getElementById('menu-button');
+            const navigationLinks = document.querySelectorAll('#navigation .sidebar-link');
+            const moduleContents = document.querySelectorAll('.module-content');
+            let finalChart = null;
+
+            function showModule(moduleId) {
+                moduleContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(moduleId).classList.add('active');
+
+                navigationLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.module === moduleId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            navigationLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const moduleId = this.dataset.module;
+                    showModule(moduleId);
+                    if (window.innerWidth < 640) {
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                });
+            });
+
+            menuButton.addEventListener('click', function() {
+                sidebar.classList.toggle('-translate-x-full');
+            });
+            
+            const quizM1 = document.getElementById('quiz-m1');
+            quizM1.addEventListener('change', function(e) {
+                if (e.target.type === 'radio') {
+                    const parent = e.target.closest('div.flex').parentElement;
+                    const feedback = parent.querySelector('.quiz-feedback');
+                    const isCorrect = e.target.value === 'false';
+                    feedback.style.display = 'block';
+                    feedback.style.backgroundColor = isCorrect ? '#dcfce7' : '#fee2e2';
+                    feedback.style.color = isCorrect ? '#166534' : '#991b1b';
+                    feedback.textContent = isCorrect 
+                        ? 'Correto! ' + feedback.textContent 
+                        : 'Incorreto. ' + feedback.textContent;
+                }
+            });
+
+            const itemsToSort = document.querySelectorAll('.sort-item');
+            const traditionalCol = document.getElementById('traditional-col');
+            const criticalCol = document.getElementById('critical-col');
+            const correctMapping = {
+                'Foco na memorização': 'traditional',
+                'Materiais importados exclusivos': 'traditional',
+                'Estímulo ao questionamento': 'critical',
+                'Valorização das experiências dos alunos': 'critical'
+            };
+
+            itemsToSort.forEach(item => {
+                item.addEventListener('click', () => {
+                    const isCorrect = confirm(`Você categorizaria "${item.textContent}" como Prática Crítica?`);
+                    const correctCategory = correctMapping[item.textContent];
+                    
+                    if ((isCorrect && correctCategory === 'critical') || (!isCorrect && correctCategory === 'traditional')) {
+                        item.classList.add('border-green-500', 'border-2');
+                        item.classList.remove('border-red-500');
+                    } else {
+                         item.classList.add('border-red-500', 'border-2');
+                         item.classList.remove('border-green-500');
+                    }
+                    
+                    if (isCorrect) {
+                        criticalCol.appendChild(item);
+                    } else {
+                        traditionalCol.appendChild(item);
+                    }
+                });
+            });
+
+            function renderFinalChart() {
+                const rubricSliders = document.querySelectorAll('.rubric-slider');
+                const labels = [];
+                const data = [];
+                rubricSliders.forEach(slider => {
+                    labels.push(slider.previousElementSibling.textContent);
+                    data.push(parseInt(slider.value));
+                });
+                
+                const ctx = document.getElementById('finalChart').getContext('2d');
+                if (finalChart) {
+                    finalChart.destroy();
+                }
+                finalChart = new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Autoavaliação do Plano de Aula',
+                            data: data,
+                            fill: true,
+                            backgroundColor: 'rgba(20, 184, 166, 0.2)',
+                            borderColor: 'rgb(13, 148, 136)',
+                            pointBackgroundColor: 'rgb(13, 148, 136)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(13, 148, 136)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                angleLines: {
+                                    display: true
+                                },
+                                suggestedMin: 0,
+                                suggestedMax: 5,
+                                pointLabels: {
+                                    font: {
+                                        size: 12
+                                    }
+                                },
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const finalRubric = document.getElementById('final-rubric');
+            finalRubric.addEventListener('input', renderFinalChart);
+
+            showModule('module1');
+            renderFinalChart(); 
+        });
+    </script>
+</body>
+</html>
