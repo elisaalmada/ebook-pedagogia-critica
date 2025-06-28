@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,7 @@
                 <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="module4">Módulo 4: Problematização</a>
                 <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="module5">Módulo 5: Integração</a>
                 <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="final-module">Conclusão</a>
+                <a href="#" class="sidebar-link block py-2.5 px-4 rounded transition duration-200 hover:bg-teal-700" data-module="references-module">Referências</a>
             </nav>
         </aside>
 
@@ -60,6 +61,7 @@
                     <p class="text-lg text-stone-700 max-w-2xl">
                         Bem-vindos, colegas educadores! Este e-book foi concebido como uma ferramenta de autoestudo e reflexão, dedicada a professores de inglês brasileiros que desejam explorar e integrar as pedagogias críticas em sua prática docente. Ao longo dos próximos módulos, convidamos você a desvendar os conceitos de decolonialidade, translinguagem e educação problematizadora e libertadora, e a aplicá-los de forma significativa em suas aulas. Prepare-se para questionar, refletir e transformar sua abordagem pedagógica! Vamos juntos nessa jornada de descoberta e aprimoramento contínuo.
                     </p>
+                    <p class="mt-4 text-sm text-stone-500">Suas respostas e progressos neste guia são salvos automaticamente no seu navegador, permitindo que você retome de onde parou.</p>
                 </div>
             </div>
 
@@ -72,27 +74,27 @@
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Ativação: Ponto de Partida</h3>
                         <p class="mb-4">Qual o papel que o ensino da língua inglesa desempenha na sociedade brasileira hoje, na sua percepção? Pense além da comunicação básica e considere as implicações sociais e culturais.</p>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
+                        <textarea id="m1_q_role" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Quiz: Crenças Comuns</h3>
-                        <div class="space-y-4" id="quiz-m1">
-                            <div>
+                        <div class="space-y-4">
+                            <div id="quiz-m1-q1-container">
                                 <p class="font-medium">1. O inglês deve ser ensinado de forma pura, sem qualquer interferência da língua portuguesa.</p>
                                 <div class="flex space-x-4 mt-2">
                                     <label class="flex items-center"><input type="radio" name="q1" value="false" class="mr-2"> Falso</label>
                                     <label class="flex items-center"><input type="radio" name="q1" value="true" class="mr-2"> Verdadeiro</label>
                                 </div>
-                                <p class="quiz-feedback mt-2 text-sm p-2 rounded-md bg-red-100 text-red-800">A visão de "pureza linguística" é um ideal monolíngue que ignora a realidade multilíngue dos estudantes e as abordagens modernas de ensino.</p>
+                                <p class="quiz-feedback mt-2 text-sm p-2 rounded-md bg-red-100 text-red-800" data-original-feedback="A visão de 'pureza linguística' é um ideal monolíngue que ignora a realidade multilíngue dos estudantes e as abordagens modernas que veem todas as línguas como recursos."></p>
                             </div>
-                            <div>
+                            <div id="quiz-m1-q2-container">
                                 <p class="font-medium">2. O currículo de inglês deve priorizar materiais e temas culturais de países anglo-saxões para garantir a autenticidade.</p>
                                 <div class="flex space-x-4 mt-2">
                                     <label class="flex items-center"><input type="radio" name="q2" value="false" class="mr-2"> Falso</label>
                                     <label class="flex items-center"><input type="radio" name="q2" value="true" class="mr-2"> Verdadeiro</label>
                                 </div>
-                                <p class="quiz-feedback mt-2 text-sm p-2 rounded-md bg-red-100 text-red-800">A exclusividade de culturas anglo-saxãs pode perpetuar a hegemonia cultural e ignorar a diversidade de contextos e experiências globais.</p>
+                                <p class="quiz-feedback mt-2 text-sm p-2 rounded-md bg-red-100 text-red-800" data-original-feedback="A exclusividade de culturas anglo-saxãs pode perpetuar a hegemonia cultural e ignorar a diversidade de contextos e experiências globais."></p>
                             </div>
                         </div>
                     </div>
@@ -157,12 +159,12 @@
                             <li>Que vozes estão ausentes?</li>
                             <li>Como você poderia "problematizar" essa unidade com seus alunos?</li>
                         </ul>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Escreva sua análise..."></textarea>
+                        <textarea id="m2_q_analysis" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Escreva sua análise..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Exploração: A Urgência da Decolonialidade no Ensino de Inglês</h3>
-                        <p class="mb-4">O conceito de decolonialidade, como proposto por pensadores como Walter Mignolo e Suresh Canagarajah, não é apenas sobre o fim do colonialismo político, mas sobre a desconstrução de padrões de conhecimento, ser e poder que foram impostos e naturalizados por perspectivas eurocêntricas. No ensino de inglês, isso significa ir além da mera instrumentalização da língua e questionar a hegemonia cultural e linguística.</p>
+                        <p class="mb-4">O conceito de decolonialidade, como proposto por pensadores como Walter Mignolo e Suresh Canagarajah (CANAGARAJAH, 2013; MIGNOLO, 2003), não é apenas sobre o fim do colonialismo político, mas sobre a desconstrução de padrões de conhecimento, ser e poder que foram impostos e naturalizados por perspectivas eurocêntricas. No ensino de inglês, isso significa ir além da mera instrumentalização da língua e questionar a hegemonia cultural e linguística.</p>
                         <p class="mb-4">A decolonialidade nos convida a desaprender e reaprender, a questionar as hierarquias implícitas na produção e circulação do conhecimento. No ensino de inglês, isso se traduz em um movimento para valorizar os saberes locais, as identidades plurais dos estudantes e as formas de expressão não-ocidentais. Não se trata de rejeitar o inglês, mas de usá-lo como uma ferramenta para amplificar vozes diversas e promover uma educação que seja crítica às desigualdades e que empodere os sujeitos a partir de suas próprias realidades e contextos.</p>
                         <h4 class="font-medium mb-2">Exemplos de como "descolonizar" o conteúdo:</h4>
                         <ul class="list-disc list-inside space-y-1 mb-4">
@@ -175,25 +177,25 @@
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Aplicação: Reescreva a Narrativa</h3>
                         <p class="mb-4">Pense em um tópico comum em livros didáticos de inglês (ex: "My Family", "Daily Routines", "Food"). Como você poderia adaptar esse tópico ou criar uma nova atividade para ele que inclua uma perspectiva mais decolonial, valorizando a diversidade cultural brasileira ou outras culturas não hegemônicas?</p>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Descreva sua ideia de atividade..."></textarea>
+                        <textarea id="m2_q_narrative" class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Descreva sua ideia de atividade..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Aplicação: Design de Atividade com Foco Decolonial</h3>
                         <p class="mb-4">Planeje uma atividade de 15-20 minutos para uma de suas turmas onde os alunos pesquisem e apresentem em inglês sobre uma personalidade histórica, um movimento social, ou uma manifestação cultural brasileira que seja relevante para eles, mas que geralmente não é abordada em materiais didáticos de inglês.</p>
-                        <input type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Objetivo da atividade:">
-                        <input type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Materiais necessários:">
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Passo a passo da atividade..."></textarea>
+                        <input id="m2_q_activity_obj" type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Objetivo da atividade:">
+                        <input id="m2_q_activity_materials" type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Materiais necessários:">
+                        <textarea id="m2_q_activity_steps" class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Passo a passo da atividade..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Avaliação: Checklist Decolonial</h3>
                         <div class="space-y-3" id="checklist-m2">
-                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" data-suggestion="Apresente diferentes perspectivas sobre um mesmo evento ou tópico, mostrando como a mídia ou materiais didáticos podem ter vieses. Peça aos alunos para analisar criticamente textos, imagens ou vídeos, identificando padrões de representação e exclusão. Por exemplo, compare imagens de 'famílias típicas' de diferentes culturas, problematizando a universalidade de certos modelos."> Minha atividade questiona alguma narrativa hegemônica ou estereótipo?</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" data-suggestion="Integre textos, músicas, vídeos ou projetos de pesquisa que abordem temas, personalidades, festividades ou manifestações culturais de países do Sul global ou de comunidades marginalizadas no Brasil. Peça aos alunos para compartilharem suas próprias vivências culturais em inglês."> A atividade valoriza vozes e conhecimentos de culturas não-hegemônicas (brasileiras, africanas, asiáticas, etc.)?</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" data-suggestion="Crie atividades abertas onde os alunos possam se expressar sobre suas realidades, tradições familiares, histórias locais ou pontos de vista pessoais. Incentive o uso de exemplos de sua vida cotidiana e contexto, usando-os como ponte para a aprendizagem da língua."> Os alunos são encorajados a trazer suas próprias experiências culturais para a discussão?</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" data-suggestion="Proponha debates sobre temas controversos, análise de letras de músicas ou filmes que contenham subtextos de poder, ou a discussão sobre a influência da cultura popular anglo-saxã no Brasil. Questione a ideia de uma 'norma' ou 'padrão' linguístico e cultural."> A atividade promove o pensamento crítico sobre as relações de poder presentes na língua ou na cultura?</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" data-suggestion="Desenvolva projetos em que os alunos pesquisem e apresentem em inglês sobre problemáticas locais, figuras inspiradoras de suas comunidades, ou iniciativas sociais brasileiras. O objetivo é que a língua seja um meio para expressar e compartilhar conhecimentos que não são tradicionalmente valorizados em materiais hegemônicos."> O inglês é usado como uma ferramenta para dar visibilidade a outras realidades?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" id="m2_check1" data-suggestion="Apresente diferentes perspectivas sobre um mesmo evento ou tópico, mostrando como a mídia ou materiais didáticos podem ter vieses. Peça aos alunos para analisar criticamente textos, imagens ou vídeos, identificando padrões de representação e exclusão. Por exemplo, compare imagens de 'famílias típicas' de diferentes culturas, problematizando a universalidade de certos modelos."> Minha atividade questiona alguma narrativa hegemônica ou estereótipo?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" id="m2_check2" data-suggestion="Integre textos, músicas, vídeos ou projetos de pesquisa que abordem temas, personalidades, festividades ou manifestações culturais de países do Sul global ou de comunidades marginalizadas no Brasil. Peça aos alunos para compartilharem suas próprias vivências culturais em inglês."> A atividade valoriza vozes e conhecimentos de culturas não-hegemônicas (brasileiras, africanas, asiáticas, etc.)?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" id="m2_check3" data-suggestion="Crie atividades abertas onde os alunos possam se expressar sobre suas realidades, tradições familiares, histórias locais ou pontos de vista pessoais. Incentive o uso de exemplos de sua vida cotidiana e contexto, usando-os como ponte para a aprendizagem da língua."> Os alunos são encorajados a trazer suas próprias experiências culturais para a discussão?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" id="m2_check4" data-suggestion="Proponha debates sobre temas controversos, análise de letras de músicas ou filmes que contenham subtextos de poder, ou a discussão sobre a influência da cultura popular anglo-saxã no Brasil. Questione a ideia de uma 'norma' ou 'padrão' linguístico e cultural."> A atividade promove o pensamento crítico sobre as relações de poder presentes na língua ou na cultura?</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-3 h-5 w-5 rounded" id="m2_check5" data-suggestion="Desenvolva projetos em que os alunos pesquisem e apresentem em inglês sobre problemáticas locais, figuras inspiradoras de suas comunidades, ou iniciativas sociais brasileiras. O objetivo é que a língua seja um meio para expressar e compartilhar conhecimentos que não são tradicionalmente valorizados em materiais hegemônicos."> O inglês é usado como uma ferramenta para dar visibilidade a outras realidades?</label>
                         </div>
                         <button id="show-m2-suggestions-btn" class="mt-6 px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition duration-200">Ver Sugestões de Implementação</button>
                         <div id="m2-suggestions-content" class="mt-4 p-4 bg-stone-50 rounded-lg hidden">
@@ -236,13 +238,13 @@
                             <li>Qual seria sua reação imediata como professor(a)?</li>
                             <li>Como uma abordagem translíngue poderia ter transformado essa situação?</li>
                         </ul>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Descreva sua abordagem..."></textarea>
+                        <textarea id="m3_q_scenario" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Descreva sua abordagem..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Exploração: Translinguagem: Um Convite à Flexibilidade Linguística</h3>
                         <p class="mb-4">O conceito de translinguagem, popularizado por pesquisadores como Ofelia García, Li Wei e Suresh Canagarajah, desafia a visão monolíngue de que as línguas são sistemas separados e estanques na mente de um bilíngue. Pelo contrário, a translinguagem reconhece que indivíduos bilíngues ou multilíngues utilizam suas diferentes línguas como um único repertório comunicativo.</p>
-                        <p class="mb-4">"A translinguagem não é apenas uma mistura de línguas ou uma tradução. É uma prática fluida onde o falante mobiliza todos os seus recursos linguísticos – e não apenas os de uma língua 'separada' – para dar sentido ao mundo, aprender e se comunicar. Na sala de aula de inglês, isso significa criar um espaço onde o uso estratégico e intencional de todas as línguas do aluno (incluindo o português) é encorajado para aprofundar a compreensão, facilitar a participação, promover o pensamento crítico e legitimar a identidade linguística dos estudantes. É uma forma de descolonizar a mente e a prática, reconhecendo que a língua adicional não precisa silenciar a língua materna, mas sim coexistir e se enriquecer mutuamente."</p>
+                        <p class="mb-4">"A translinguagem não é apenas uma mistura de línguas ou uma tradução. É uma prática fluida onde o falante mobiliza todos os seus recursos linguísticos – e não apenas os de uma língua 'separada' – para dar sentido ao mundo, aprender e se comunicar. Na sala de aula de inglês, isso significa criar um espaço onde o uso estratégico e intencional de todas as línguas do aluno (incluindo o português) é encorajado para aprofundar a compreensão, facilitar a participação, promover o pensamento crítico e legitimar a identidade linguística dos estudantes. É uma forma de descolonizar a mente e a prática, reconhecendo que a língua adicional não precisa silenciar a língua materna, mas sim coexistir e se enriquecer mutuamente." (GARCÍA; WEI, 2014; CANAGARAJAH, 2013)</p>
                         <h4 class="font-medium mb-2">Benefícios Pedagógicos e Cognitivos da Translinguagem:</h4>
                         <ul class="list-disc list-inside space-y-1 mb-4">
                             <li>Aprofundamento da compreensão de conceitos complexos.</li>
@@ -256,21 +258,21 @@
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Aplicação: Desenhando uma Aula Translíngue</h3>
                         <p class="mb-4">Escolha um tópico. Descreva uma atividade onde o uso intencional do português é permitido para facilitar a produção em inglês.</p>
-                        <input type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Tópico:">
-                        <input type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Objetivo da atividade (com translinguagem):">
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Passo a passo da atividade, incluindo quando e como a translinguagem ocorreria..."></textarea>
+                        <input id="m3_q_topic" type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Tópico:">
+                        <input id="m3_q_objective" type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Objetivo da atividade (com translinguagem):">
+                        <textarea id="m3_q_steps" class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Passo a passo da atividade, incluindo quando e como a translinguagem ocorreria..."></textarea>
                         
                         <h3 class="text-xl font-semibold mb-4 mt-6">Preencher Lacunas com Estratégias Translíngues</h3>
                         <p class="mb-4">Complete as frases abaixo, imaginando como você poderia usar a translinguagem em cada situação.</p>
                         <div class="space-y-4">
                             <div>
-                                <p>1. Para introduzir um conceito gramatical complexo (ex: present perfect continuous), eu poderia <textarea class="w-full p-2 border rounded-md bg-stone-50 inline-block align-middle" rows="1" placeholder="ex: usar um gráfico em português que compare tempos verbos, antes de apresentar os usos em inglês"></textarea>.</p>
+                                <p>1. Para introduzir um conceito gramatical complexo (ex: present perfect continuous), eu poderia <textarea id="m3_q_fill1" class="w-full p-2 border rounded-md bg-stone-50 inline-block align-middle" rows="1" placeholder="ex: usar um gráfico em português que compare tempos verbos, antes de apresentar os usos em inglês"></textarea>.</p>
                             </div>
                             <div>
-                                <p>2. Se um aluno não entende uma instrução, em vez de apenas repetir em inglês, eu poderia <textarea class="w-full p-2 border rounded-md bg-stone-50 inline-block align-middle" rows="1" placeholder="ex: pedir que um colega explique em português, ou usar uma palavra-chave em português para desmistificar o conceito"></textarea>.</p>
+                                <p>2. Se um aluno não entende uma instrução, em vez de apenas repetir em inglês, eu poderia <textarea id="m3_q_fill2" class="w-full p-2 border rounded-md bg-stone-50 inline-block align-middle" rows="1" placeholder="ex: pedir que um colega explique em português, ou usar uma palavra-chave em português para desmistificar o conceito"></textarea>.</p>
                             </div>
                             <div>
-                                <p>3. Para uma discussão mais profunda sobre um tema controverso, eu permitiria que os alunos <textarea class="w-full p-2 border rounded-md bg-stone-50 inline-block align-middle" rows="1" placeholder="ex: começassem a discutir ideias em português em pequenos grupos, antes de tentar formular seus argumentos em inglês"></textarea>.</p>
+                                <p>3. Para uma discussão mais profunda sobre um tema controverso, eu permitiria que os alunos <textarea id="m3_q_fill3" class="w-full p-2 border rounded-md bg-stone-50 inline-block align-middle" rows="1" placeholder="ex: começassem a discutir ideias em português em pequenos grupos, antes de tentar formular seus argumentos em inglês"></textarea>.</p>
                             </div>
                         </div>
                     </div>
@@ -279,7 +281,7 @@
                         <h3 class="text-xl font-semibold mb-4">Avaliação: Quiz de Múltipla Escolha: Aplicação da Translinguagem</h3>
                         <div class="space-y-4">
                             <div id="quiz-m3-trans-q1-container">
-                                <p class="font-medium">Qual das seguintes opções *NÃO* é um princípio da translinguagem?</p>
+                                <p class="font-medium">Qual das seguintes opções <span class="font-bold">NÃO</span> é um princípio da translinguagem?</p>
                                 <div class="flex flex-col space-y-2 mt-2">
                                     <label class="flex items-center"><input type="radio" name="q_trans_1" value="a" class="mr-2"> a) Permitir que os alunos usem sua língua materna para esclarecer dúvidas complexas.</label>
                                     <label class="flex items-center"><input type="radio" name="q_trans_1" value="b" class="mr-2"> b) Incentivar os alunos a misturar português e inglês aleatoriamente sem objetivo.</label>
@@ -291,7 +293,7 @@
                         </div>
                         <h3 class="text-xl font-semibold mb-4 mt-6">Reflexão Final do Módulo</h3>
                         <p class="mb-4">Quais desafios você prevê ao tentar implementar a translinguagem em sua sala de aula? E quais oportunidades você enxerga para essa prática?</p>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
+                        <textarea id="m3_q_reflection" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
                     </div>
                  </div>
             </div>
@@ -308,19 +310,19 @@
                             <li>Como o "erro" é geralmente tratado na sua sala de aula? Como ele é percebido pelos alunos?</li>
                             <li>De que formas você estimula a autonomia e a voz ativa dos seus alunos, para além da mera repetição?</li>
                         </ul>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
+                        <textarea id="m4_q_reflection_1" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
                         <h3 class="text-xl font-semibold mb-4 mt-6">Estudo de Caso: Reação do Professor</h3>
                         <p class="mb-4"><b>Cenário:</b> Em uma aula de inglês sobre "comida saudável", um aluno levanta a questão da desnutrição em comunidades carentes no Brasil, quebrando o roteiro planejado. O livro didático não aborda esse aspecto.</p>
                         <ul class="list-disc list-inside space-y-2 mb-4">
                             <li>Como você, como professor(a), reagiria a essa intervenção inesperada? Você "voltaria" para o plano original ou abraçaria a discussão?</li>
                             <li>Como um professor com uma postura problematizadora abordaria essa situação?</li>
                         </ul>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua análise..."></textarea>
+                        <textarea id="m4_q_scenario_reaction" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua análise..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Exploração: A Pedagogia da Pergunta</h3>
-                        <p class="mb-4">A **educação problematizadora e libertadora**, idealizada por **Paulo Freire**, propõe um modelo de ensino que se opõe à "educação bancária", onde o professor "deposita" conhecimento nos alunos. Freire defendia uma prática pedagógica baseada no diálogo, na reflexão-ação e na construção coletiva do conhecimento, em que educadores e educandos aprendem juntos, problematizando a realidade para transformá-la.</p>
+                        <p class="mb-4">A educação problematizadora e libertadora, idealizada por Paulo Freire (FREIRE, 2011), propõe um modelo de ensino que se opõe à "educação bancária", onde o professor "deposita" conhecimento nos alunos. Freire defendia uma prática pedagógica baseada no diálogo, na reflexão-ação e na construção coletiva do conhecimento, em que educadores e educandos aprendem juntos, problematizando a realidade para transformá-la.</p>
                         <p class="mb-4">"A pedagogia freiriana não busca respostas prontas, mas estimula perguntas. Trata-se de engajar os alunos em um processo de investigação de sua própria realidade, de forma crítica. No ensino de inglês, isso significa ir além de exercícios mecânicos e propor atividades que levem o aluno a refletir sobre questões do seu dia a dia, da sua comunidade ou do mundo, utilizando a língua inglesa como ferramenta para essa reflexão e para a busca de soluções. O professor atua como mediador, provocador de reflexões, e não como único detentor do saber, construindo um ambiente onde a autonomia e a curiosidade são valorizadas e onde o erro é visto como parte do processo de aprendizagem e não como um fracasso."</p>
                         <h4 class="font-medium mb-2">Estratégias para Fomentar a Curiosidade e o Pensamento Crítico:</h4>
                         <ul class="list-disc list-inside space-y-1 mb-4">
@@ -334,25 +336,25 @@
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Aplicação: Criando uma "Roda de Conversa" Problematizadora</h3>
                         <p class="mb-4">Escolha um tema de interesse dos seus alunos (ex: redes sociais, meio ambiente, esportes). Elabore 5 perguntas em inglês que estimulem o pensamento crítico e o debate, fugindo de respostas simples de "sim" ou "não".</p>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="5" placeholder="1. ...&#10;2. ...&#10;3. ...&#10;4. ...&#10;5. ..."></textarea>
+                        <textarea id="m4_q_roda_conversa" class="w-full p-2 border rounded-md bg-stone-50" rows="5" placeholder="1. ...&#10;2. ...&#10;3. ...&#10;4. ...&#10;5. ..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Aplicação: Adaptação de Atividade</h3>
                         <p class="mb-4">Pense em uma atividade comum que você usa em aula. Como você a adaptaria para torná-la mais "problematizadora", incentivando a reflexão profunda e a autonomia dos alunos?</p>
-                        <input type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Atividade original:">
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Adaptação e justificativa..."></textarea>
+                        <input id="m4_q_original_activity" type="text" class="w-full p-2 border rounded-md bg-stone-50 mb-2" placeholder="Atividade original:">
+                        <textarea id="m4_q_adaptation" class="w-full p-2 border rounded-md bg-stone-50" rows="4" placeholder="Adaptação e justificativa..."></textarea>
                     </div>
 
                      <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Avaliação: Rubrica de Ambientes Libertadores</h3>
                         <p class="mb-4">Avalie-se de 1 (Pouco) a 5 (Totalmente) em cada item.</p>
                         <div class="space-y-4" id="rubrica-m4">
-                            <label class="flex items-center"><input type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Inicie aulas com perguntas abertas que gerem discussão ('O que vocês pensam sobre X?', 'Como Y afeta a vida de vocês?'). Use 'think-pair-share' ou pequenos grupos para encorajar a expressão."> Crio oportunidades para que meus alunos questionem e expressem suas próprias opiniões.</label>
-                            <label class="flex items-center"><input type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Peça aos alunos para relacionar novos conteúdos com suas vivências. Faça um 'brainstorming' inicial para explorar o que eles já sabem ou pensam sobre um tema."> Valorizo as experiências e os conhecimentos prévios dos alunos, incorporando-os à aula.</label>
-                            <label class="flex items-center"><input type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Direcione as perguntas de volta para os alunos ('O que mais vocês precisam para entender isso?', 'Como poderíamos descobrir a resposta para isso juntos?'). Proponha projetos de pesquisa onde você guia, mas não dá todas as respostas."> Eu me vejo como um mediador do conhecimento, não apenas como um transmissor.</label>
-                            <label class="flex items-center"><input type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Ofereça opções de projetos, temas de leitura ou formatos de apresentação. Deixe-os escolher como querem demonstrar o aprendizado, desde que atinjam os objetivos."> Eu encorajo a autonomia dos alunos na escolha de tópicos ou na forma de aprender.</label>
-                            <label class="flex items-center"><input type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Transforme erros em momentos de aprendizagem coletiva ('O que podemos aprender com isso?', 'Como podemos reformular essa ideia para que fique mais clara?'). Use frases como 'Isso nos mostra uma área para explorar mais' em vez de 'Está errado'."> O "erro" é visto como uma oportunidade de aprendizagem e reflexão na minha aula.</label>
+                            <label class="flex items-center"><input id="m4_rubric_q1" type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Inicie aulas com perguntas abertas que gerem discussão ('O que vocês pensam sobre X?', 'Como Y afeta a vida de vocês?'). Use 'think-pair-share' ou pequenos grupos para encorajar a expressão."> Crio oportunidades para que meus alunos questionem e expressem suas próprias opiniões.</label>
+                            <label class="flex items-center"><input id="m4_rubric_q2" type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Peça aos alunos para relacionar novos conteúdos com suas vivências. Faça um 'brainstorming' inicial para explorar o que eles já sabem ou pensam sobre um tema."> Valorizo as experiências e os conhecimentos prévios dos alunos, incorporando-os à aula.</label>
+                            <label class="flex items-center"><input id="m4_rubric_q3" type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Direcione as perguntas de volta para os alunos ('O que mais vocês precisam para entender isso?', 'Como poderíamos descobrir a resposta para isso juntos?'). Proponha projetos de pesquisa onde você guia, mas não dá todas as respostas."> Eu me vejo como um mediador do conhecimento, não apenas como um transmissor.</label>
+                            <label class="flex items-center"><input id="m4_rubric_q4" type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Ofereça opções de projetos, temas de leitura ou formatos de apresentação. Deixe-os escolher como querem demonstrar o aprendizado, desde que atinjam os objetivos."> Eu encorajo a autonomia dos alunos na escolha de tópicos ou na forma de aprender.</label>
+                            <label class="flex items-center"><input id="m4_rubric_q5" type="range" min="1" max="5" value="3" class="w-full mr-3" data-suggestion="Transforme erros em momentos de aprendizagem coletiva ('O que podemos aprender com isso?', 'Como podemos reformular essa ideia para que fique mais clara?'). Use frases como 'Isso nos mostra uma área para explorar mais' em vez de 'Está errado'."> O "erro" é visto como uma oportunidade de aprendizagem e reflexão na minha aula.</label>
                         </div>
                         <button id="show-m4-suggestions-btn" class="mt-6 px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition duration-200">Ver Dicas de Implementação</button>
                         <div id="m4-suggestions-content" class="mt-4 p-4 bg-stone-50 rounded-lg hidden">
@@ -372,7 +374,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Ativação: Exercício de Brainstorming</h3>
                         <p class="mb-4">Quais são os maiores desafios que você prevê ao tentar aplicar simultaneamente os princípios da decolonialidade, translinguagem e educação problematizadora em sua realidade de sala de aula? E quais são as maiores oportunidades?</p>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
+                        <textarea id="m5_q_brainstorming" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
@@ -390,11 +392,9 @@
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-xl font-semibold mb-4">Aplicação: Projeto Final (Autoaplicável): Plano de Aula Integrado</h3>
                         <p class="mb-4">Crie um plano de aula completo (para uma duração de aula que você normalmente ministra, ex: 50 minutos) para uma de suas turmas. Este plano deve incorporar ativamente os três pilares das pedagogias críticas discutidos neste e-book. Use os checklists e rubricas dos módulos anteriores para guiar seu processo.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Tema da aula" class="p-2 border rounded-md">
-                             <input type="text" placeholder="Público-alvo" class="p-2 border rounded-md">
-                        </div>
-                        <textarea class="w-full p-2 border rounded-md mt-4" rows="8" placeholder="Passo a passo detalhado da aula..."></textarea>
+                        <input id="m5_plan_theme" type="text" placeholder="Tema da aula" class="p-2 border rounded-md">
+                        <input id="m5_plan_audience" type="text" placeholder="Público-alvo" class="p-2 border rounded-md">
+                        <textarea id="m5_plan_steps" class="w-full p-2 border rounded-md mt-4" rows="8" placeholder="Passo a passo detalhado da aula..."></textarea>
                     </div>
 
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
@@ -411,7 +411,7 @@
                                 <p class="quiz-feedback mt-2 text-sm p-2 rounded-md bg-red-100 text-red-800" data-original-feedback="Paulo Freire é o principal teórico da educação problematizadora e libertadora."></p>
                             </div>
                             <div id="quiz-m5-q2-container">
-                                <p class="font-medium">2. Qual das práticas abaixo *melhor* exemplifica a translinguagem em uma aula de inglês?</p>
+                                <p class="font-medium">2. Qual das práticas abaixo <em>melhor</em> exemplifica a translinguagem em uma aula de inglês?</p>
                                 <div class="flex flex-col space-y-2 mt-2">
                                     <label class="flex items-center"><input type="radio" name="q_m5_2" value="a" class="mr-2"> a) O professor traduz cada palavra nova para o português.</label>
                                     <label class="flex items-center"><input type="radio" name="q_m5_2" value="b" class="mr-2"> b) Os alunos podem usar português para organizar ideias em grupos antes de apresentá-las em inglês.</label>
@@ -429,23 +429,23 @@
                         <div id="final-rubric" class="space-y-4">
                              <div>
                                 <label for="rubric-decoloniality" class="font-medium">Decolonialidade</label>
-                                <input type="range" id="rubric-decoloniality" min="1" max="5" value="3" class="w-full rubric-slider">
+                                <input id="rubric-decoloniality" type="range" min="1" max="5" value="3" class="w-full rubric-slider">
                             </div>
                              <div>
                                 <label for="rubric-translanguaging" class="font-medium">Translinguagem</label>
-                                <input type="range" id="rubric-translanguaging" min="1" max="5" value="3" class="w-full rubric-slider">
+                                <input id="rubric-translanguaging" type="range" min="1" max="5" value="3" class="w-full rubric-slider">
                             </div>
                             <div>
                                 <label for="rubric-problematizing" class="font-medium">Problematização</label>
-                                <input type="range" id="rubric-problematizing" min="1" max="5" value="3" class="w-full rubric-slider">
+                                <input id="rubric-problematizing" type="range" min="1" max="5" value="3" class="w-full rubric-slider">
                             </div>
                              <div>
                                 <label for="rubric-engagement" class="font-medium">Engajamento</label>
-                                <input type="range" id="rubric-engagement" min="1" max="5" value="3" class="w-full rubric-slider">
+                                <input id="rubric-engagement" type="range" min="1" max="5" value="3" class="w-full rubric-slider">
                             </div>
                               <div>
                                 <label for="rubric-assessment" class="font-medium">Avaliação</label>
-                                <input type="range" id="rubric-assessment" min="1" max="5" value="3" class="w-full rubric-slider">
+                                <input id="rubric-assessment" type="range" min="1" max="5" value="3" class="w-full rubric-slider">
                             </div>
                         </div>
 
@@ -462,7 +462,7 @@
                             <li>Qual é o seu maior desafio agora, ao tentar aplicar essas pedagogias em sua prática diária?</li>
                             <li>Quais os seus próximos passos para continuar sua jornada de desenvolvimento profissional nesta área?</li>
                         </ul>
-                        <textarea class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
+                        <textarea id="m5_q_reflection_final" class="w-full p-2 border rounded-md bg-stone-50" rows="3" placeholder="Sua reflexão aqui..."></textarea>
                     </div>
                  </div>
             </div>
@@ -476,6 +476,17 @@
                         Agradecemos por dedicar seu tempo e energia para explorar as pedagogias críticas no ensino de inglês. Lembre-se, a transformação da prática pedagógica é um processo contínuo e colaborativo. Esperamos que este guia digital tenha fornecido insights valiosos e ferramentas práticas para você começar ou aprofundar sua jornada em direção a uma educação linguística mais inclusiva, relevante e libertadora. Continue questionando, criando e inspirando seus alunos! O impacto de sua prática crítica ressoa muito além da sala de aula.
                     </p>
                     <p class="mt-8 text-sm text-stone-500">Volte sempre que precisar de um lembrete ou de novas reflexões.</p>
+                </div>
+            </div>
+
+            <!-- Módulo de Referências -->
+            <div id="references-module" class="module-content">
+                <h2 class="text-3xl font-bold text-teal-800 mb-8">Referências</h2>
+                <div class="space-y-4 text-lg text-stone-700">
+                    <p>CANAGARAJAH, Suresh. <em>Translingual Practice</em>: Global Englishes and Cosmopolitan Relations. New York: Routledge, 2013.</p>
+                    <p>FREIRE, Paulo. <em>Pedagogia do oprimido</em>. 50. ed. Rio de Janeiro: Paz e Terra, 2011.</p>
+                    <p>GARCÍA, Ofelia; WEI, Li. <em>Translanguaging</em>: Language, Bilingualism and Education. New York: Palgrave Macmillan, 2014.</p>
+                    <p>MIGNOLO, Walter D. <em>Histórias locais/projetos globais</em>: colonialidade, saberes subalternos e pensamento liminar. Belo Horizonte: UFMG, 2003.</p>
                 </div>
             </div>
 
@@ -520,45 +531,41 @@
             });
             
             // Function to handle quiz feedback
-            function handleQuizFeedback(quizContainerId, correctValue) {
-                const quizContainer = document.getElementById(quizContainerId);
-                if (quizContainer) {
-                    quizContainer.addEventListener('change', function(e) {
-                        if (e.target.type === 'radio') {
-                            const feedbackElement = quizContainer.querySelector('.quiz-feedback');
-                            if (!feedbackElement) return;
+            function setupQuizFeedback(containerId, correctValue) {
+                const container = document.getElementById(containerId);
+                if (container) {
+                    const radios = container.querySelectorAll('input[type="radio"]');
+                    const feedbackElement = container.querySelector('.quiz-feedback');
+                    if (!feedbackElement) return;
 
-                            const isCorrect = e.target.value === correctValue;
+                    let originalFeedback = feedbackElement.dataset.originalFeedback;
+                    if (!originalFeedback) {
+                        originalFeedback = feedbackElement.innerHTML;
+                        feedbackElement.dataset.originalFeedback = originalFeedback;
+                    }
+
+                    radios.forEach(radio => {
+                        radio.addEventListener('change', function() {
+                            const isCorrect = this.value === correctValue;
                             
                             feedbackElement.style.display = 'block';
                             feedbackElement.style.backgroundColor = isCorrect ? '#dcfce7' : '#fee2e2';
                             feedbackElement.style.color = isCorrect ? '#166534' : '#991b1b';
-                            
-                            let originalFeedbackText = feedbackElement.dataset.originalFeedback;
-                            if (!originalFeedbackText) {
-                                originalFeedbackText = feedbackElement.innerHTML;
-                                feedbackElement.dataset.originalFeedback = originalFeedbackText;
-                            }
-                            feedbackElement.innerHTML = originalFeedbackText;
-                        }
+                            feedbackElement.innerHTML = originalFeedback; // Always show original feedback
+                        });
                     });
                 }
             }
 
 
-            // Initialize quizzes in Module 1
-            handleQuizFeedback('quiz-m1', 'false'); // Assuming general feedback for the whole quiz-m1 div
-            // If you want per-question feedback for module 1, you'd need unique containers like in module 3/5.
-
-            // Initialize quizzes in Module 3 (using specific container IDs)
-            handleQuizFeedback('quiz-q3-1-container', 'false'); 
-            handleQuizFeedback('quiz-q3-2-container', 'false'); 
-            handleQuizFeedback('quiz-m3-trans-q1-container', 'b'); 
-
-
-            // Initialize quizzes in Module 5 (using specific container IDs)
-            handleQuizFeedback('quiz-m5-q1-container', 'b'); 
-            handleQuizFeedback('quiz-m5-q2-container', 'b'); 
+            // Initialize all quizzes with feedback
+            setupQuizFeedback('quiz-m1-q1-container', 'false'); // Módulo 1, Quiz 1
+            setupQuizFeedback('quiz-m1-q2-container', 'false'); // Módulo 1, Quiz 2
+            setupQuizFeedback('quiz-q3-1-container', 'false'); // Módulo 3, Quiz 1
+            setupQuizFeedback('quiz-q3-2-container', 'false'); // Módulo 3, Quiz 2
+            setupQuizFeedback('quiz-m3-trans-q1-container', 'b'); // Módulo 3, Translinguagem Quiz
+            setupQuizFeedback('quiz-m5-q1-container', 'b'); // Módulo 5, Quiz Final Q1
+            setupQuizFeedback('quiz-m5-q2-container', 'b'); // Módulo 5, Quiz Final Q2
 
 
             // Drag and Drop functions
@@ -780,6 +787,79 @@
             
             const finalRubric = document.getElementById('final-rubric');
             finalRubric.addEventListener('input', renderFinalChart);
+
+            // Local Storage Logic
+            function saveInput(element) {
+                if (element.id) {
+                    localStorage.setItem(element.id, element.value);
+                }
+            }
+
+            function loadInput(element) {
+                if (element.id) {
+                    const savedValue = localStorage.getItem(element.id);
+                    if (savedValue !== null) {
+                        element.value = savedValue;
+                        // For radio buttons, specifically check them
+                        if (element.type === 'radio') {
+                             // Re-trigger the change event for feedback
+                            const changeEvent = new Event('change', { bubbles: true });
+                            element.dispatchEvent(changeEvent);
+                        }
+                    }
+                }
+            }
+
+            // Load and save for textareas
+            document.querySelectorAll('textarea').forEach(textarea => {
+                loadInput(textarea);
+                textarea.addEventListener('input', () => saveInput(textarea));
+            });
+
+            // Load and save for range sliders (rubrics)
+            document.querySelectorAll('input[type="range"]').forEach(slider => {
+                loadInput(slider);
+                slider.addEventListener('input', () => {
+                    saveInput(slider);
+                    if (slider.closest('#final-rubric')) {
+                        renderFinalChart(); // Re-render chart on final rubric change
+                    }
+                });
+            });
+
+            // Load and save for text inputs
+            document.querySelectorAll('input[type="text"]').forEach(textInput => {
+                loadInput(textInput);
+                textInput.addEventListener('input', () => saveInput(textInput));
+            });
+            
+            // Load and save for checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                const savedChecked = localStorage.getItem(checkbox.id);
+                if (savedChecked !== null) {
+                    checkbox.checked = (savedChecked === 'true');
+                }
+                checkbox.addEventListener('change', () => saveInput(checkbox.id, checkbox.checked));
+            });
+
+            // Re-trigger quiz feedback on load for radio buttons that were saved
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                const savedValue = localStorage.getItem(radio.name); // Use radio group name as key
+                if (savedValue === radio.value) {
+                    radio.checked = true;
+                    // Trigger change event for immediate feedback on load
+                    const changeEvent = new Event('change', { bubbles: true });
+                    // Find the closest container with the specific ID for setupQuizFeedback
+                    const quizContainer = radio.closest('div[id$="-container"]');
+                    if (quizContainer) {
+                        quizContainer.dispatchEvent(changeEvent);
+                    }
+                }
+                radio.addEventListener('change', () => {
+                    localStorage.setItem(radio.name, radio.value); // Save only the checked value
+                });
+            });
+
 
             showModule('intro-module'); 
             renderFinalChart(); 
